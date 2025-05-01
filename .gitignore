@@ -1,0 +1,9 @@
+#Packages
+node_modules
+
+#envs
+.env.development
+
+#files
+docs/invoicing.json
+docs/measurement.json
