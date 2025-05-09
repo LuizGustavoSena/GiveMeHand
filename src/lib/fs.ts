@@ -28,12 +28,13 @@ const readFileByPathName = async (pathName: FilenameEnum): Promise<readFileByPat
         throw new Error(`File ${pathName} is not valid.`);
 
     const data = fileProps.data;
+    const decrementMonth = pathName === FilenameEnum.M ? 0 : 1;
 
     if (data.MAIL_SUBJECT.includes('${Date}'))
-        data.MAIL_SUBJECT = data.MAIL_SUBJECT.replace('${Date}', formatDateNow());
+        data.MAIL_SUBJECT = data.MAIL_SUBJECT.replace('${Date}', formatDateNow(decrementMonth));
 
     if (data.MAIL_TEXT.includes('${Date}'))
-        data.MAIL_TEXT = data.MAIL_TEXT.replace('${Date}', formatDateNow());
+        data.MAIL_TEXT = data.MAIL_TEXT.replace('${Date}', formatDateNow(decrementMonth));
 
     return data;
 };
