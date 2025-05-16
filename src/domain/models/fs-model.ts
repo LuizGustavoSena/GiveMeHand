@@ -3,3 +3,9 @@ export type readFileByPathName = {
     MAIL_TEXT: string;
     MAILS_TO: string[];
 };
+
+export type filesToExportProps = {
+    filename: string;
+    content: string;
+    encoding: string;
+}

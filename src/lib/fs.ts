@@ -1,6 +1,6 @@
 import { FilenameEnum } from '@src/domain/enums/filename-enum';
-import { readFileByPathName } from '@src/domain/models/fs-model';
-import { readFile } from "fs";
+import { filesToExportProps, readFileByPathName } from '@src/domain/models/fs-model';
+import { readdir, readFile, readFileSync } from "fs";
 import { z } from "zod";
 import { formatDateNow } from './moment';
 
@@ -39,5 +39,29 @@ const readFileByPathName = async (pathName: FilenameEnum): Promise<readFileByPat
     return data;
 };
 
-export { readFileByPathName };
+const filesToExport = async () => {
+    return await new Promise<filesToExportProps[]>((resolve) => {
+        readdir('./docs/attachments', (err, files) => {
+            const nameFiles: filesToExportProps[] = [];
+
+            if (err) {
+                console.error('Error reading directory:', err);
+                return;
+            }
+
+            files.forEach(file => {
+                const base64content = readFileSync(`docs/attachments/${file}`, { encoding: 'base64' });
+                nameFiles.push({
+                    filename: file,
+                    content: base64content,
+                    encoding: 'base64'
+                });
+            });
+
+            resolve(nameFiles)
+        });
+    });
+}
+
+export { filesToExport, readFileByPathName };
 
