@@ -3,4 +3,5 @@ import { FilenameEnum } from "../enums/filename-enum";
 
 export type InformationInfoContructor = {
     TYPE_EMAIL: FilenameEnum;
+    attachments: string;
 } & readFileByPathName;
