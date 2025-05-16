@@ -12,15 +12,16 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-async function sendEmail({ to, subject, text }: sendEmailProps) {
-    const info = await transporter.sendMail({
+async function sendEmail({ to, subject, text, attachments }: sendEmailProps) {
+    await transporter.sendMail({
         from: env.MAIL_FROM,
         to,
         subject,
         html: text,
+        attachments
     });
 
-    console.log("Message sent");
+    console.log("Email enviado!!!");
 }
 
 export { sendEmail };
