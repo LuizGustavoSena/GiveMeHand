@@ -7,3 +7,4 @@ node_modules
 #files
 docs/invoicing.json
 docs/measurement.json
+docs/attachments/*
