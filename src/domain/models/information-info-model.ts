@@ -1,7 +1,6 @@
 import { readFileByPathName } from "@src/lib/fs";
-import { FilenameEnum } from "../enums/filename-enum";
 
 export type InformationInfoContructor = {
-    TYPE_EMAIL: FilenameEnum;
+    TYPE_EMAIL: string;
     attachments: string;
 } & readFileByPathName;
