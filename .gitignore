@@ -5,6 +5,4 @@ node_modules
 .env.development
 
 #files
-docs/invoicing.json
-docs/measurement.json
-docs/attachments/*
+docs/*
