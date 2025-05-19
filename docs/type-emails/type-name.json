@@ -1,0 +1,7 @@
+{
+    "MAIL_SUBJECT": "Subject example in ${Date}",
+    "MAIL_TEXT": "Text example<br><br>break line.",
+    "MAILS_TO": [
+        "email@email.com"
+    ]
+}
