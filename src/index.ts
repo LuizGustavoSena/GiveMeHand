@@ -28,6 +28,7 @@ async function execute() {
   sendEmail({
     to: extraInfo.MAILS_TO.join(', '),
     subject: extraInfo.MAIL_SUBJECT,
+    cc: extraInfo.MAILS_CC,
     text: extraInfo.MAIL_TEXT,
     attachments
   });

@@ -5,4 +5,5 @@ export type sendEmailProps = {
     subject: string;
     text: string;
     attachments: filesToExportProps[];
+    cc: string[]
 }

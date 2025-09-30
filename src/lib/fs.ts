@@ -18,7 +18,8 @@ const readFileByPathName = async (pathName: string): Promise<readFileByPathName>
     const fileSchema = z.object({
         MAIL_SUBJECT: z.string(),
         MAIL_TEXT: z.string(),
-        MAILS_TO: z.array(z.string())
+        MAILS_TO: z.array(z.string()),
+        MAILS_CC: z.array(z.string())
     });
 
     const fileProps = fileSchema.safeParse(JSON.parse(file.toString()));
