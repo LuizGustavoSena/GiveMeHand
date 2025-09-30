@@ -4,8 +4,7 @@
   "description": "Assist in sending invoices by email",
   "main": "index.js",
   "scripts": {
-    "dev": "dotenv -e .env.development -- tsx src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "dotenv -e .env.development -- tsx src/index.ts"
   },
   "author": "Luiz Gustavo Banin de Sena",
   "devDependencies": {
